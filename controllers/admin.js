@@ -1,4 +1,4 @@
-const fileHelper = require("../utils/file");
+const fileHelper = require("../util/file");
 
 const { validationResult } = require("express-validator/check");
 

@@ -27,7 +27,7 @@ const fileStorage = multer.diskStorage({
     cb(null, "images");
   },
   filename: (req, file, cb) => {
-    cb(null, new Date().toISOString() + "-" + file.originalname);
+    cb(null, new Date().toDateString() + "-" + file.originalname);
   },
 });
 
@@ -74,6 +74,7 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
+  // throw new Error('Sync Dummy');
   if (!req.session.user) {
     return next();
   }
@@ -94,10 +95,13 @@ app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
 
-app.use("/500", errorController.get500);
+app.get("/500", errorController.get500);
+
 app.use(errorController.get404);
 
 app.use((error, req, res, next) => {
+  // res.status(error.httpStatusCode).render(...);
+  // res.redirect('/500');
   res.status(500).render("500", {
     pageTitle: "Error!",
     path: "/500",
@@ -106,7 +110,7 @@ app.use((error, req, res, next) => {
 });
 
 mongoose
-  .connect(MONGODB_URI)
+  .connect(MONGODB_URI, { useNewUrlParser: true })
   .then((result) => {
     app.listen(3000);
   })

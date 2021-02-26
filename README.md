@@ -5,6 +5,9 @@
 * Users can purchase products and pay using stripe API (just for test)
 * Users can review their orders
 
+## Working app
+https://ecommerce-nodejs-app.herokuapp.com
+
 ## Getting Started
 
 To get your project running in your machine, just clone this repository in your machine and go to your project directory and run 

@@ -17,7 +17,7 @@ npm install
 
 ### Prerequisites
 
-To be able to get this API running in your machine you should have installed Node.js and NPM.
+To be able to get this app running in your machine you should have installed Node.js and NPM.
 
 ## Built With
 
@@ -26,7 +26,6 @@ To be able to get this API running in your machine you should have installed Nod
 * [NPM](https://www.npmjs.com) - Dependency Management
 * [MongoDB](https://www.mongodb.com) - Database
 * [EJS](https://ejs.co) - Embedded JavaScript templating
-https://ejs.co
 
 ## Acknowledgments
 
